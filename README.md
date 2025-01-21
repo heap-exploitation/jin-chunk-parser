@@ -2,13 +2,9 @@
 
 ### env
 
----
-
 **`Pwngdb`**: for heapinfo
 
 ### chunk
-
----
 
 ```c
 struct malloc_chunk {
@@ -32,15 +28,13 @@ struct malloc_chunk {
     
     - PREV_INUSE
     - IS_MMAPPED
-    - NON*_*MAIN*_*ARENA
+    - NON_MAIN_ARENA
 - `fd`: actual start of the data area, and it is not used when the current chunk is allocated. When it is freed, fd points to the forward chunk.
 - `bk`: When the current chunk is freed, bk points to the backward chunk.
 - `fd_nextsize`: a pointer used in the large bin, pointing to the address of a heap chunk smaller than the current heap chunk.
 - `bk_next_size`: a pointer used in the large bin, pointing to the address of a heap chunk larger than the current heap chunk.
 
 ### bin & tcache
-
----
 
 `Fastbin`: 32 ~ 128 bytes
 
@@ -51,8 +45,6 @@ struct malloc_chunk {
 `Tcache`: 32 ~ 1032 bytes
 
 ### main_arena
-
----
 
 ```c
 struct malloc_state
