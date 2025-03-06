@@ -87,3 +87,5 @@ struct malloc_state
   INTERNAL_SIZE_T max_system_mem;
 };
 ```
+![image](https://github.com/user-attachments/assets/360b9af3-1dc7-492e-b964-1c276c96d86f)
+
