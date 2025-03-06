@@ -1,8 +1,7 @@
 CC = gcc
 CFLAGS = -g -O0 -Wall -Werror
-LDFLAGS = -lc -ldl
 
-SRC = dump_chunk.c
+SRC = maybe_bug.c
 
 all:
 	$(CC) $(CFLAGS) $(SRC) $(LDFLAGS)
