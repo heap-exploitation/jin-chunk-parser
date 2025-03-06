@@ -1,5 +1,6 @@
 /**
  * Apple and Linux have different behavior when reallocating a memory block.
+ * Also there is a wierd address in the tcache in linux machine.
  */
 
 #include <stdio.h>
@@ -14,11 +15,16 @@ int main() {
     strcpy(p, "hello");
     printf("p: %p\n", p);
 
+    p = realloc(p, 50);
+    printf("p: %p\n", p);
+
     p = realloc(p, 2);
     printf("p: %p\n", p);
-    
-    printf("===============================\n");
-    printf("p: %p %s\n", p, p);
+
+    free(p);
+
+    // printf("===============================\n");
+    // printf("tmp: %p, %s\n", p, p);
 
     return 0;
 }
